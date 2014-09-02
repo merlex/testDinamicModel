@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test work</title>
+    <link rel="stylesheet" href="{% static "main.css" %}" />
+    <link rel="stylesheet" href="http://yastatic.net/jquery-ui/1.11.1/themes/smoothness/jquery-ui.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jqueryui-editable/css/jqueryui-editable.css" />
+    <script src="http://yastatic.net/jquery/1.11.1/jquery.js"></script>
+    <script src="http://yastatic.net/jquery-ui/1.11.1/jquery-ui.js"></script>
+    <script src="http://yastatic.net/jquery/tmpl/1.0.0pre/jquery.tmpl.js"></script>
+    <script src="http://yastatic.net/jquery/cookie/1.0/jquery.cookie.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jqueryui-editable/js/jqueryui-editable.min.js"></script>
+    <script src="{% static "main.js" %}"></script>
+    <script type="text/javascript">
+        var baseUrl = '{% url 'index' %}';
+    </script>
+</head>
+<body>
+<header></header>
+    {% block content %}{% endblock %}
+<footer></footer>
+</body>
+</html>

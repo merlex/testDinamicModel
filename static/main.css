@@ -1,0 +1,21 @@
+#mainmenu {
+    overflow: hidden;
+}
+#mainmenu ul {
+    list-style: none;
+}
+#content {
+    left: 25%;
+    top: 0px;
+    position: absolute;
+}
+#content #table-data,
+#content #table-data td{
+    border: 1px solid;
+}
+#content #table-data a {
+    text-decoration: none;
+}
+#content #create-model {
+    display: none;
+}

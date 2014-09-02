@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <menu id="mainmenu">
+    {% if model_list %}
+        <ul>
+        {% for key,model in model_list.items %}
+            <li><a href="/{{ key }}" data-key="{{ key }}">{{ model.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No models are available.</p>
+    {% endif %}
+    </menu>
+    <div id="content">
+        <div id="table-data"></div>
+        <button id="create-model">Create</button>
+    </div>
+{% endblock %}

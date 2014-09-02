@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load myapp_extras %}
+
+{% block content %}
+    <menu id="mainmenu">
+    {% if model_list %}
+        <ul>
+        {% for key,model in model_list.items %}
+            <li><a href="/{{ key }}" data-key="{{ key }}">{{ model.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No models are available.</p>
+    {% endif %}
+    </menu>
+    <div id="content">
+    {% if model %}
+        <table>
+
+        <tr>
+        {% for field in model.fields %}
+            <td>{{ field.title }}</td>
+        {% endfor %}
+        </tr>
+        {% for object in objects %}
+            <tr>
+            {% for field in model.fields %}
+                {% if field.type == 'date' %}
+                    <td>{{ object|get_item:field.id|date:"d.m.Y" }}</td>
+                {% else %}
+                    <td>{{ object|get_item:field.id }}</td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+
+        </table>
+    {% else %}
+        <p>No models are available.</p>
+    {% endif %}
+    </div>
+{% endblock %}
