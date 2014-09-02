@@ -9,7 +9,6 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'testwork.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    (r'^inplaceeditform/', include('inplaceeditform.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 
